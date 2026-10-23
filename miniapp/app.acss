@@ -1,0 +1,7 @@
+page { background:#f5f7fa; color:#1f2329; font-size:30rpx; }
+.page { padding:32rpx; }
+.card { background:#fff; border-radius:20rpx; padding:28rpx; margin-bottom:24rpx; }
+.title { font-size:38rpx; font-weight:600; margin-bottom:16rpx; }
+.muted { color:#86909c; font-size:26rpx; }
+.button { margin-top:24rpx; background:#1677ff; color:white; border-radius:12rpx; }
+.error { color:#d4380d; margin-top:16rpx; }

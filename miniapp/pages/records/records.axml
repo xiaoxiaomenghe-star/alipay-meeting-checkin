@@ -1,0 +1,1 @@
+<view class="page"><view class="card"><view class="title">我的积分 {{balance}}</view></view><view a:for="{{records}}" a:key="id" class="card">会议 {{item.meetingId}} · {{item.checkinType}}<view class="muted">{{item.checkedInAt}}</view></view><view class="error">{{error}}</view></view>

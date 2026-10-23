@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="card">
+    <view class="title">现场签到</view>
+    <view class="muted">优先使用支付宝定位；演示模式下定位不可用时会明确使用会场测试坐标。</view>
+    <button class="button" onTap="submit" loading="{{loading}}">定位并签到</button>
+    <view a:if="{{usedDemoLocation}}" class="demo-notice">本次使用演示坐标，不代表真机定位验证。</view>
+    <view a:if="{{result}}" class="success">
+      <view>签到成功</view>
+      <view class="muted">距离 {{result.distanceMeters}} 米，积分处理中 +{{result.pointsPending}}</view>
+      <view class="text-link" onTap="openRecords">查看签到记录</view>
+    </view>
+    <view class="error">{{error}}</view>
+  </view>
+</view>

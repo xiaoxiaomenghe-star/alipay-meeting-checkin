@@ -1,0 +1,4 @@
+.card view { margin-top:18rpx; }
+.demo-notice { color:#ad6800; background:#fff7e6; padding:16rpx; border-radius:10rpx; }
+.success { color:#237804; }
+.text-link { color:#1677ff; }

@@ -1,0 +1,4 @@
+.card:active { opacity:.75; }
+.page-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16rpx; }
+.page-header .title { margin-bottom:0; }
+.text-link { color:#1677ff; font-size:28rpx; }

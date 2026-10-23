@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: meeting-checkin-server
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/meeting_checkin?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    listener:
+      simple:
+        acknowledge-mode: auto
+        default-requeue-rejected: false
+  jackson:
+    time-zone: Asia/Shanghai
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+app:
+  auth-secret: ${AUTH_SECRET}
+  entry-secret: ${ENTRY_SECRET}
+  outbox-enabled: ${OUTBOX_ENABLED:true}
+  rate-limit-enabled: ${RATE_LIMIT_ENABLED:true}

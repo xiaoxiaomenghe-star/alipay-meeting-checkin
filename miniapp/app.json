@@ -1,0 +1,4 @@
+{
+  "pages": ["pages/login/login", "pages/meetings/meetings", "pages/meeting/meeting", "pages/checkin/checkin", "pages/records/records"],
+  "window": { "defaultTitle": "会议签到", "titleBarColor": "#1677ff", "pullRefresh": false }
+}

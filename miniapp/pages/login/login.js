@@ -1,0 +1,2 @@
+const { request } = require('../../utils/request');
+Page({ data:{authCode:'dev-alice',loading:false,error:''}, onInput(e){this.setData({authCode:e.detail.value});}, async login(){this.setData({loading:true,error:''});try{const r=await request('/api/v1/auth/login',{method:'POST',data:{authCode:this.data.authCode}});getApp().globalData.token=r.token;my.setStorageSync({key:'token',data:r.token});my.reLaunch({url:'/pages/meetings/meetings'});}catch(e){this.setData({error:e.message});}finally{this.setData({loading:false});}} });

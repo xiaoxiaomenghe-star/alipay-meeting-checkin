@@ -1,0 +1,11 @@
+<view class="page">
+  <view a:if="{{loading}}" class="muted">正在加载会议详情...</view>
+  <view class="card" a:if="{{detail}}">
+    <view class="title">{{detail.meeting.title}}</view>
+    <view>{{detail.meeting.description}}</view>
+    <view class="status" a:if="{{registered}}">已报名，可以进入签到</view>
+    <button class="button" onTap="register" disabled="{{registered}}">{{registered ? '已报名' : '立即报名'}}</button>
+    <button class="button secondary" onTap="checkin" a:if="{{registered && detail.points.length}}">进入签到</button>
+  </view>
+  <view class="error">{{error}}</view>
+</view>

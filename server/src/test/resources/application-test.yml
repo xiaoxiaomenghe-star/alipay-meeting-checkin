@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:meeting;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+  rabbitmq:
+    listener:
+      simple:
+        auto-startup: false
+app:
+  auth-secret: test-auth-secret-only-for-automated-tests
+  entry-secret: test-entry-secret-only-for-automated-tests
+  outbox-enabled: false
+  rate-limit-enabled: true

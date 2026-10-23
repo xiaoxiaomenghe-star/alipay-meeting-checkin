@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="page-header">
+    <view class="title">可报名会议</view>
+    <view class="text-link" onTap="openRecords">我的签到</view>
+  </view>
+  <view a:if="{{loading}}" class="muted">正在加载会议...</view>
+  <view a:elif="{{!meetings.length && !error}}" class="card muted">当前没有可报名会议</view>
+  <view a:for="{{meetings}}" a:key="id" class="card" data-id="{{item.id}}" onTap="open">
+    <view>{{item.title}}</view>
+    <view class="muted">{{item.description}}</view>
+  </view>
+  <view class="error">{{error}}</view>
+</view>

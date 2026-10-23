@@ -1,0 +1,1 @@
+<view class="page"><view class="card"><view class="title">会议签到</view><view class="muted">开发环境使用本地授权码，不代表支付宝真实授权已联调。</view><input value="{{authCode}}" onInput="onInput" placeholder="dev-alice"/><button class="button" onTap="login" loading="{{loading}}">登录</button><view class="error">{{error}}</view></view></view>

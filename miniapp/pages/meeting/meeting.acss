@@ -1,0 +1,3 @@
+button + button { margin-top:16rpx; }
+.status { margin-top:20rpx; color:#1677ff; font-size:26rpx; }
+.secondary { background:#fff; color:#1677ff; border:2rpx solid #1677ff; }
