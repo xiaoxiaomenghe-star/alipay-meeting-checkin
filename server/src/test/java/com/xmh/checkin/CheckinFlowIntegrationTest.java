@@ -9,12 +9,14 @@ import com.xmh.checkin.domain.CheckinRecord;
 import com.xmh.checkin.domain.Meeting;
 import com.xmh.checkin.domain.MeetingRegistration;
 import com.xmh.checkin.domain.OutboxEvent;
+import com.xmh.checkin.infra.InMemoryGuards;
 import com.xmh.checkin.mapper.CheckinPointMapper;
 import com.xmh.checkin.mapper.CheckinRecordMapper;
 import com.xmh.checkin.mapper.MeetingMapper;
 import com.xmh.checkin.mapper.OutboxEventMapper;
 import com.xmh.checkin.service.*;
 import java.math.BigDecimal;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,6 +37,12 @@ class CheckinFlowIntegrationTest {
   @Autowired MeetingMapper meetingMapper;
   @Autowired CheckinPointMapper pointMapper;
   @Autowired CheckinRecordMapper checkinRecordMapper;
+  @Autowired InMemoryGuards guards;
+
+  @AfterEach
+  void resetInMemoryGuards() {
+    guards.reset();
+  }
 
   @Test
   void completeFlowAndDuplicateProtection() {

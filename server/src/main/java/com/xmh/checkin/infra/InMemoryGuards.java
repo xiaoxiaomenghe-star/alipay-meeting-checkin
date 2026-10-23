@@ -38,5 +38,10 @@ public class InMemoryGuards implements IdempotencyStore, RateLimiter {
     return value.count.get() <= limit;
   }
 
+  public void reset() {
+    ids.clear();
+    counters.clear();
+  }
+
   private record Counter(AtomicInteger count, Instant expires) {}
 }
